@@ -1,0 +1,52 @@
+.flicker {}
+
+.flicker-enter {
+    animation-name: flicker;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
+
+.flicker-enter-active {}
+
+.flicker-leave {
+    animation-name: flicker;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
+
+.flicker-leave-active {}
+
+@keyframes flicker {
+    from {
+        opacity: .5;
+        transform: rotateY(0deg)
+    }
+    4%, 11%, 19%, 20%, 24%, 28%, 40%, 44%, 46%, 56%, 60%, 68%, 72%, 93%, 97% {
+        opacity: .5;
+    }
+    6%, 10%, 38% {
+        opacity: .45;
+    }
+    8%, 14%, 17% {
+        opacity: .55;
+    }
+    12% {
+        opacity: .65;
+    }
+    16% {
+        opacity: .7;
+    }
+    26% {
+        opacity: .69;
+    }
+    58% {
+        opacity: .75;
+    }
+    70%, 95% {
+        opacity: .6;
+    }
+    to {
+        opacity: .5;
+        transform: rotateY(360deg)
+    }
+}
