@@ -10,6 +10,7 @@ import acustica from './images/invie-acustica.png';
 import clasica from './images/invie-classic.png';
 import easterA from './images/easter-a.png';
 import easterB from './images/easter-b.png';
+import logoPlatzi from './images/platzi.png';
 
 import cheet from 'cheet.js';
 
@@ -19,6 +20,7 @@ import { createStore } from 'redux';
 
 
 const initialState = {
+    isAnimated: false,
     menu: [
         {
             href: 'index.html',
@@ -73,12 +75,14 @@ function reducer(state, action) {
 const store = createStore(reducer, initialState);
 
 const easter = {
+    isAnimated: 'is-animated',
+
     menu: [
         {
-            href: 'index.html',
-            title: 'Home',
+
         },
     ],
+    logoPortada: logoPlatzi,
     guitarras: [
         {
             image: easterA,
@@ -90,6 +94,7 @@ const easter = {
                 'Chistes malos',
             ],
         },
+       
         {
             image: easterB,
             alt: 'Guitarra Invie Classic',

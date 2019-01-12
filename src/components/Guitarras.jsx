@@ -30,20 +30,26 @@ class Guitarras extends Component{
                                         alt={guitarra.alt} 
                                         width="350" />
                                 </CSSTransitionGroup >
-                                <div className="contenedor-guitarra">
-                                    <h3 className="guitarra-name">{guitarra.name}</h3>
-                                    <ol>
-                                        {
-                                            guitarra.features.map((feature, index)=>{
-                                                return(
-                                                    <li key={index}>{feature}</li>
-                                                )
-                                            })
-                                        }
-                                        {/* <li>Madera pura</li>
-                                        <li>Incluye estuche invisible de aluminio</li> */}
-                                    </ol>
-                                </div>
+                                <CSSTransitionGroup
+                                    transitionName="fade"
+                                    transitionEnterTimeout={300}
+                                    transitionLeave = {false}
+                                >
+                                    <div className="contenedor-guitarra" key={guitarra.name}>
+                                        <h3 className="guitarra-name">{guitarra.name}</h3>
+                                        <ol>
+                                            {
+                                                guitarra.features.map((feature, index)=>{
+                                                    return(
+                                                        <li key={index}>{feature}</li>
+                                                    )
+                                                })
+                                            }
+                                            {/* <li>Madera pura</li>
+                                            <li>Incluye estuche invisible de aluminio</li> */}
+                                        </ol>
+                                    </div>
+                                </CSSTransitionGroup>
                             </article>
                         )
                     })
